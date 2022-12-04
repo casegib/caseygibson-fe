@@ -51,19 +51,7 @@
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/thecaseygibson/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://github.com/casegib" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <br>
-                    <p class="counter"> The number of visitors to this website is </p>
-                        <p id ="body"></p>
-                            <script type = "text/javascript">
-                                var apiUrl = "https://lwqmzt396c.execute-api.us-east-1.amazonaws.com/production";
-                                    fetch(apiUrl)
-                                    .then(response => response.json())
-                                    .then(data =>{
-                                var count = document.getElementById('body');
-                                count.innerHTML = data.body;
-                                console.log(data)});
-         </script>
+                    </div>                    
                 </div>
             </section>
             <hr class="m-0" />
@@ -285,6 +273,30 @@
                 </div>
             </section> -->
         </div>
+        <!-- Copyright -->
+        <section class="card-footer">
+            <div>
+                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+                <p><script>
+                    //console.log("INCLUDE: this-is-fine-meme.png")
+                    var dev_env = false
+                    if (dev_env == false) {
+                        fetch("https://lwqmzt396c.execute-api.us-east-1.amazonaws.com/production")
+                            .then(function (response) {
+                                return response.json()
+                            })  
+                            .then(function (myJson) {
+                                console.log("Visitor Count: " + myJson.visitorCount);
+                                document.querySelector("#visitorCount").innerHTML = "Total visitors: " + myJson.visitorCount;
+                            })
+                            .catch(function (error) {
+                                console.log("Error: " + error)
+                            })
+                    }
+                </script></p>
+            </div>
+        </section>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
