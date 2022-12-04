@@ -52,6 +52,17 @@
                         <a class="social-icon" href="https://www.linkedin.com/in/thecaseygibson/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://github.com/casegib" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
+                    <p class="counter"> The number of visitors to this website is </p>
+                        <p id ="body"></p>
+                            <script type = "text/javascript">
+                                var apiUrl = "https://3uxorq06wd.execute-api.us-east-1.amazonaws.com/default";
+                                    fetch(apiUrl)
+                                    .then(response => response.json())
+                                    .then(data =>{
+                                var count = document.getElementById('body');
+                                count.innerHTML = data.body;
+                                console.log(data)});
+         </script>
                 </div>
             </section>
             <hr class="m-0" />
