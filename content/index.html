@@ -276,9 +276,8 @@
         <!-- Copyright -->
         <section class="card-footer">
             <div>
-                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
-                <p class="counter"> The number of visitors to this website is </p>
-                        <p id ="body"></p>
+                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</p>
+                <p class="counter"> The number of visitors to this website is: <span id="body"></span></p>
                             <script type = "text/javascript">
                                 var apiUrl = "https://lwqmzt396c.execute-api.us-east-1.amazonaws.com/production";
                                     fetch(apiUrl)
@@ -287,6 +286,7 @@
                                 var count = document.getElementById('body');
                                 count.innerHTML = data.body;
                                 console.log(data)});
+                
          </script>
             </div>
         </section>
